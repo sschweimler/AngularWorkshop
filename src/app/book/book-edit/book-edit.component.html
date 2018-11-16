@@ -1,0 +1,22 @@
+<form *ngIf="book" #form="ngForm" (ngSubmit)="save(form.value)">
+  <input
+    type="text"
+    [(ngModel)]="book.title" 
+    name="title"
+    #title="ngModel" required minlength="3">
+    <div [hidden]="!title.errors?.required">Title is required!</div>
+    <br>
+    <input
+    type="text"
+    [(ngModel)]="book.abstract" 
+    name="abstract"
+    #absract="ngModel">
+    <br/>
+    <input
+    type="text"
+    [(ngModel)]="book.author" 
+    name="author"
+    #author="ngModel">
+    <button type="submit">Safe!</button>
+</form>
+

@@ -14,12 +14,13 @@ export class BookDetailComponent implements OnInit, OnDestroy {
   isbn: string;
   book: Book;
   sub: Subscription;
+  img: string;
   constructor(private route: ActivatedRoute, private bookData: BookDataService) { }
 
   ngOnInit() {
     // tslint:disable-next-line:max-line-length
     // params bekommt hier ein Interface zugewiesen
-    this.sub = this.route.params.subscribe((params: {isbn: string}) => {
+    this.sub = this.route.params.subscribe((params: {isbn: string}) => { this.bookData.getBookCover(params.isbn).subscribe(cover => { this.img = cover.volumeInfo.imageLinks.thumbnail; });
       this.bookData.getBookByIsbn(params.isbn).subscribe(book => {this.book = book; }); });
   }
   ngOnDestroy(): void {

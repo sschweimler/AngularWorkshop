@@ -16,4 +16,8 @@ export class BookDataService {
   getBookByIsbn(isbn: string): Observable<Book> {
     return this.http.get<Book>(`http://localhost:4730/books/${isbn}`);
   }
+  getBookCover(isbn: string): Observable<any> {
+
+    return this.http.get<any>('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn);
+  }
 }
