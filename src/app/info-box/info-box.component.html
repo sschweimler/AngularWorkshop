@@ -1,0 +1,7 @@
+<button (click)="isHidden=!isHidden">Öffne die Info-box</button>
+
+<div [hidden]="isHidden" (click)="changeHidden()"> 
+
+Hallo! Das ist eine Info
+
+</div>

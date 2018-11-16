@@ -1,0 +1,10 @@
+.mouse-cursor-box{
+    border: 1px solid;
+    height: 400px;
+    width:400px;
+    position:relative;
+}
+.coordinates{
+    position: absolute;
+    bottom: 0;
+}

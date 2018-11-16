@@ -1,0 +1,28 @@
+<div class="table-responsive">
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <!-- <th width="200px">Subtitle</th> -->
+      <th width="200px">ISBN</th>
+      <th>Abstract</th>
+      <th>Numpages</th>
+      <th width="200px">Author</th>
+      <th >Publisher</th>
+      <th>Url</th>
+    </tr>
+  </thead>
+<tbody>
+<tr *ngFor="let book of books">
+          <td>{{book.title}} </td>
+          <!-- <td>{{book.subtitle}}</td> -->
+          <td>{{book.isbn}}</td>
+          <td>{{book.abstract}}</td>
+          <td>{{book.numPages}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.publisher.name}}</td>
+          <td><a [routerLink]="['/books', book.isbn]">{{book.publisher.url}}</a></td>
+        </tr>
+</tbody>
+</table>
+</div>
