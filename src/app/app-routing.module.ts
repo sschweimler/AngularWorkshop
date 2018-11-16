@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [ { path: '',
 pathMatch: 'full',
-redirectTo: '/books'}];
+redirectTo: '/books'},
+{path: 'books', loadChildren: './book/book.module#BookModule'}];
 export const routing = RouterModule.forRoot(routes);
 
 @NgModule({
