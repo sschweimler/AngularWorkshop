@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 export const routes: Routes = [ { path: '',
 pathMatch: 'full',
 redirectTo: '/books'}];
+export const routing = RouterModule.forRoot(routes);
 
 @NgModule({
   imports: [
@@ -16,4 +17,6 @@ redirectTo: '/books'}];
     RouterModule
   ]
 })
+
 export class AppRoutingModule {}
+
